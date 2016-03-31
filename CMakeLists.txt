@@ -1,0 +1,8 @@
+cmake_minimum_required (VERSION 2.6)
+project (pthreading)
+find_package (Boost 1.50 COMPONENTS system thread)
+include_directories(${Boost_INCLUDE_DIR})
+include_directories(include)
+file(GLOB SOURCES "src/*.cpp")
+add_executable(pthreading ${SOURCES})
+target_link_libraries (pthreading ${Boost_LIBRARIES})
